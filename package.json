@@ -1,5 +1,5 @@
 {
-    "name": "cratecode-cli",
+    "name": "cratecode",
     "version": "1.0.0",
     "scripts": {
         "build": "tsc"
