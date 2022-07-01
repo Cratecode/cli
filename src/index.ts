@@ -8,8 +8,7 @@ import * as fs from "fs";
 import * as Path from "path";
 
 yargs(hideBin(process.argv))
-    .scriptName("Cratecode CLI")
-    .usage("$0 <cmd> [args]")
+    .usage("Cratecode CLI")
     .command(
         "upload <manifest>",
         "Uploads a unit to Cratecode.",
@@ -60,7 +59,11 @@ yargs(hideBin(process.argv))
             }
 
             const output =
-                args.output || Path.parse(args.video as string).name + ".ogg";
+                args.output ||
+                Path.join(
+                    Path.dirname(args.video as string),
+                    Path.parse(args.video as string).name + ".ogg",
+                );
 
             // Make sure that the user knows that they're overriding a file.
             if (
@@ -73,7 +76,7 @@ yargs(hideBin(process.argv))
                         message:
                             'The file "' +
                             output +
-                            '" already exists. Please confirm that you want to override it (Y/n):',
+                            '" already exists. Please confirm that you want to override it:',
                     })
                 ).value
             ) {
@@ -126,7 +129,7 @@ yargs(hideBin(process.argv))
                         message:
                             'The file "' +
                             output +
-                            '" already exists. Please confirm that you want to override it (Y/n):',
+                            '" already exists. Please confirm that you want to override it:',
                     })
                 ).value
             ) {
