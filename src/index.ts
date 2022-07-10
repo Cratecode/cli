@@ -21,18 +21,22 @@ yargs(hideBin(process.argv))
             },
         },
         async (args) => {
-            let key: string | null = args.key;
-            if (!key) {
-                key = (
-                    await prompts({
-                        type: "text",
-                        name: "value",
-                        message: "Please enter your API key:",
-                    })
-                ).value as string;
-            }
+            try {
+                let key: string | null = args.key;
+                if (!key) {
+                    key = (
+                        await prompts({
+                            type: "password",
+                            name: "value",
+                            message: "Please enter your API key:",
+                        })
+                    ).value as string;
+                }
 
-            await upload(args.manifest as string, key);
+                await upload(args.manifest as string, key);
+            } catch (e) {
+                console.error(e);
+            }
         },
     )
     .command(
@@ -54,40 +58,45 @@ yargs(hideBin(process.argv))
             },
         },
         async (args) => {
-            if (!fs.existsSync(args.video as string)) {
-                throw new Error("The specified video file does not exist!");
-            }
+            try {
+                if (!fs.existsSync(args.video as string)) {
+                    console.error("The specified video file does not exist!");
+                    return;
+                }
 
-            const output =
-                args.output ||
-                Path.join(
-                    Path.dirname(args.video as string),
-                    Path.parse(args.video as string).name + ".ogg",
+                const output =
+                    args.output ||
+                    Path.join(
+                        Path.dirname(args.video as string),
+                        Path.parse(args.video as string).name + ".ogg",
+                    );
+
+                // Make sure that the user knows that they're overriding a file.
+                if (
+                    fs.existsSync(output) &&
+                    !args.yes &&
+                    !(
+                        await prompts({
+                            type: "confirm",
+                            name: "value",
+                            message:
+                                'The file "' +
+                                output +
+                                '" already exists. Please confirm that you want to override it:',
+                        })
+                    ).value
+                ) {
+                    return;
+                }
+
+                fs.writeFileSync(
+                    output,
+                    videoToAudio(fs.readFileSync(args.video as string)),
                 );
-
-            // Make sure that the user knows that they're overriding a file.
-            if (
-                fs.existsSync(output) &&
-                !args.yes &&
-                !(
-                    await prompts({
-                        type: "confirm",
-                        name: "value",
-                        message:
-                            'The file "' +
-                            output +
-                            '" already exists. Please confirm that you want to override it:',
-                    })
-                ).value
-            ) {
-                return;
+                console.log('Wrote audio to "' + output + '".');
+            } catch (e) {
+                console.error(e);
             }
-
-            fs.writeFileSync(
-                output,
-                videoToAudio(fs.readFileSync(args.video as string)),
-            );
-            console.log('Wrote audio to "' + output + '".');
         },
     )
     .command(
@@ -109,41 +118,47 @@ yargs(hideBin(process.argv))
             },
         },
         async (args) => {
-            if (!fs.existsSync(args.video as string)) {
-                throw new Error("The specified video file does not exist!");
-            }
-            if (!fs.existsSync(args.audio as string)) {
-                throw new Error("The specified audio file does not exist!");
-            }
+            try {
+                if (!fs.existsSync(args.video as string)) {
+                    console.error("The specified video file does not exist!");
+                    return;
+                }
+                if (!fs.existsSync(args.audio as string)) {
+                    console.error("The specified audio file does not exist!");
+                    return;
+                }
 
-            const output = args.output || (args.video as string);
+                const output = args.output || (args.video as string);
 
-            // Make sure that the user knows that they're overriding a file.
-            if (
-                fs.existsSync(output) &&
-                !args.yes &&
-                !(
-                    await prompts({
-                        type: "confirm",
-                        name: "value",
-                        message:
-                            'The file "' +
-                            output +
-                            '" already exists. Please confirm that you want to override it:',
-                    })
-                ).value
-            ) {
-                return;
+                // Make sure that the user knows that they're overriding a file.
+                if (
+                    fs.existsSync(output) &&
+                    !args.yes &&
+                    !(
+                        await prompts({
+                            type: "confirm",
+                            name: "value",
+                            message:
+                                'The file "' +
+                                output +
+                                '" already exists. Please confirm that you want to override it:',
+                        })
+                    ).value
+                ) {
+                    return;
+                }
+
+                fs.writeFileSync(
+                    output,
+                    createVideo(
+                        fs.readFileSync(args.video as string),
+                        fs.readFileSync(args.audio as string),
+                    ),
+                );
+                console.log('Wrote video with new audio to "' + output + '".');
+            } catch (e) {
+                console.error(e);
             }
-
-            fs.writeFileSync(
-                output,
-                createVideo(
-                    fs.readFileSync(args.video as string),
-                    fs.readFileSync(args.audio as string),
-                ),
-            );
-            console.log('Wrote video with new audio to "' + output + '".');
         },
     )
     .showHelpOnFail(true)
