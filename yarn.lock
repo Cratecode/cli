@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@cratecode/client@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@cratecode/client/-/client-1.0.4.tgz#39e0a524285a0695116fc2e49b73058899f351c7"
-  integrity sha512-YOezUxynrUOn5OusrKqsZUPB/Yv96N6DplRneYCkfm1C0d2J+wPeAgKvAgWknOhPXXCVmeiyKWQO7WcVpJtd3Q==
+"@cratecode/client@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@cratecode/client/-/client-1.0.6.tgz#f794e11fcfa08f967b3097c531a97a7eea81aa0d"
+  integrity sha512-htI45zkw+n5hjBSNXzWmWO22Na+/RZ8V2Vf+lyMz+Hi8hNQ8g8YcMM07ZhGuYBKFMiUe53FzK/LrKpnlI2jCIw==
   dependencies:
     "@protobuf-ts/runtime" "^2.7.0"
     axios "^0.27.2"
