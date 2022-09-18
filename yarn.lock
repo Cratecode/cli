@@ -2,17 +2,17 @@
 # yarn lockfile v1
 
 
-"@cratecode/client@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@cratecode/client/-/client-1.0.7.tgz#fb5e5e15ac1a7df0294bec02de61c704bbd19e8a"
-  integrity sha512-SZqwKGlm9HdYgiUAILZUFysUqf7Q0AxYYbrFWODFw41dfe7I6akfLbbqbV6HQ5etTT9OgO3/XNVmMAKXPHWJow==
+"@cratecode/client@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@cratecode/client/-/client-1.0.8.tgz#2b927d70773d97b1603b1e94a268843b1832f08f"
+  integrity sha512-+bzqALAnsAzN9EY5jta/p7es+vn7+BB8PdxzyeFCAHI3LeO7fNK46qngTpDp6xbxWRYFFmcULxvt17pbVN/lLw==
   dependencies:
-    "@protobuf-ts/runtime" "^2.7.0"
+    "@protobuf-ts/runtime" "^2.8.1"
     axios "^0.27.2"
     form-data "^4.0.0"
     lodash "^4.17.21"
     walkdir "^0.4.1"
-    ws "^8.8.0"
+    ws "^8.8.1"
   optionalDependencies:
     bufferutil "^4.0.6"
     utf-8-validate "^5.0.9"
@@ -77,10 +77,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@protobuf-ts/runtime@^2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@protobuf-ts/runtime/-/runtime-2.7.0.tgz#108252b9935018bd7eb9c0d4a349b8db11e382f7"
-  integrity sha512-CzunTplg81oMkF9MnSYiX2WOdHnAyHKnokZncgOHm5bt8iEfFNnUsMSbsWUus/ulRNIZ9VAVMjutd96vmySQaw==
+"@protobuf-ts/runtime@^2.8.1":
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/@protobuf-ts/runtime/-/runtime-2.8.1.tgz#e88f89650ab29c3eba0afebe32b9f3552f35fc85"
+  integrity sha512-D9M5hSumYCovIfNllt7N6ODh4q+LrjiMWtNETvooaf+a2XheZJ7kgjFlsFghti0CFWwtA//of4JXQfw9hU+cCw==
 
 "@types/json-schema@^7.0.9":
   version "7.0.11"
@@ -92,10 +92,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.0.0.tgz#67c7b724e1bcdd7a8821ce0d5ee184d3b4dd525a"
   integrity sha512-cHlGmko4gWLVI27cGJntjs/Sj8th9aYwplmZFwmmgYQQvL5NUsgVJG7OddLvNfLqYS31KFN0s3qlaD9qCaxACA==
 
-"@types/node@^18.7.17":
-  version "18.7.17"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.17.tgz#52438111ea98f77475470fc62d79b9eb96bb2c92"
-  integrity sha512-0UyfUnt02zIuqp7yC8RYtDkp/vo8bFaQ13KkSEvUAohPOAlnVNbj5Fi3fgPSuwzakS+EvvnnZ4x9y7i6ASaSPQ==
+"@types/node@^18.7.18":
+  version "18.7.18"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.18.tgz#633184f55c322e4fb08612307c274ee6d5ed3154"
+  integrity sha512-m+6nTEOadJZuTPkKR/SYK3A2d7FZrgElol9UP1Kae90VVU4a6mxnPuLiIW1m4Cq4gZ/nWb9GrdVXJCoCazDAbg==
 
 "@types/prompts@^2.0.14":
   version "2.0.14"
@@ -1082,10 +1082,10 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
 
-ws@^8.8.0:
-  version "8.8.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.8.0.tgz#8e71c75e2f6348dbf8d78005107297056cb77769"
-  integrity sha512-JDAgSYQ1ksuwqfChJusw1LSJ8BizJ2e/vVu5Lxjq3YvNJNlROv1ui4i+c/kUUrPheBvQl4c5UbERhTwKa6QBJQ==
+ws@^8.8.1:
+  version "8.8.1"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.8.1.tgz#5dbad0feb7ade8ecc99b830c1d77c913d4955ff0"
+  integrity sha512-bGy2JzvzkPowEJV++hF07hAD6niYSr0JzBNo/J29WsB57A2r7Wlc1UFcTR9IzrPvuNVO4B8LGqF8qcpsVOhJCA==
 
 y18n@^5.0.5:
   version "5.0.8"
