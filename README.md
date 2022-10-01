@@ -1,6 +1,6 @@
 # CLI
 
-This is the CLI for Cratecode. It provides an interface for managing aspects of Cratecode involved during the creation of lessons/units.
+This is the CLI for [Cratecode](https://cratecode.com). It provides an interface for managing aspects of Cratecode involved during the creation of lessons/units.
 
 ## Features
 
