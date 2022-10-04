@@ -10,7 +10,7 @@
     "author": "Cratecode",
     "license": "Apache-2.0",
     "dependencies": {
-        "@cratecode/client": "^1.0.9",
+        "@cratecode/client": "^1.0.10",
         "prompts": "^2.4.2",
         "yargs": "^17.5.1"
     },
