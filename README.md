@@ -14,7 +14,7 @@ The CLI can:
 
 ## Uploading Units
 
-To upload a unit use the `npx cratecode upload path/to/manifest.json` command.
+To upload a unit use the `npx cratecode upload path/to/manifest.json` command. You'll need an API key, which you can get at https://cratecode.com/account (`API` tab).
 
 ### Creating Lessons/Units
 
