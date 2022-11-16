@@ -63,12 +63,13 @@ During the uploading process, `manifest.json`, `config.json`, and `video.cv` wil
     "type": "lesson",
     "id": "friendly_name",
     "name": "Display Name",
+    "unit": "unit_friendly_name",
     "spec": null,
     "class": "tutorial"
 }
 ```
 
-Where `id` is a friendly name/id for the unit, `name` is the display name for the unit, `spec` is the specification for what the lesson's code should be, and `class` is the type of lesson (null, `tutorial`, `activity`, `project`, and `challenge`).
+Where `id` is a friendly name/id for the unit, `name` is the display name for the unit, `unit` is the friendly name for this lesson's primary/canonical unit or null if none exists (this is for SEO only), `spec` is the specification for what the lesson's code should be, and `class` is the type of lesson (null, `tutorial`, `activity`, `project`, and `challenge`).
 
 A typical setup might look like the below file tree, where the first manifest is the first example manifest and the second manifest is the second example manifest:
 
